@@ -1,0 +1,17 @@
+php artisan crud:generate Producto --fields="nombre#string;descrip#string;precio#decimal;stock#integer;foto#string;clasificacion_id#integer;nacionalidad_id#integer;marca_id#integer;" --view-path=admin --controller-namespace=admin --route-group=admin
+
+### CRUD-GENERATOR - TABLA tamhojas
+
+php artisan crud:generate Tamhoja --fields="nombre#string;" --view-path=admin --controller-namespace=admin --route-group=admin
+
+### CRUD-GENERATOR - TABLA unisolicitantes
+
+php artisan crud:generate Unisolicitante --fields="nombre#string;" --view-path=admin --controller-namespace=admin --route-group=admin
+
+### CRUD-GENERATOR - TABLA usuarios
+
+php artisan crud:generate Usuario --fields="nombre#string;ci#string;unisolicitante_id#integer;" --view-path=admin --controller-namespace=admin --route-group=admin
+
+### CRUD-GENERATOR - TABLA regimpresions
+
+php artisan crud:generate Regimpresion --fields="descripcion#string;cantidad#integer;fecha#date;usuario_id#integer;tamhoja_id#integer;" --view-path=admin --controller-namespace=admin --route-group=admin
