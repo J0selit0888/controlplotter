@@ -256,9 +256,9 @@ return [
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
-    'password_email_url' => 'password/email',
+    'register_url' => false,
+    'password_reset_url' => false,
+    'password_email_url' => false,
     'profile_url' => false,
 
     /*
@@ -300,7 +300,7 @@ return [
         [
             'text'        => 'Inicio',
             'route'         => 'home',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-home',
             // 'label'       => 4,
             'label_color' => 'success',
         ],
@@ -314,31 +314,31 @@ return [
         [
             'text'        => 'Unidad Solicitante',
             'route'         => 'unisolicitante.index',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-users',
             // 'label'       => 4,
             'label_color' => 'success',
         ],
         [
             'text'        => 'Usuarios',
             'route'         => 'usuario.index',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-user',
             // 'label'       => 4,
             'label_color' => 'success',
         ],
         [
             'text'        => 'Registros',
             'route'         => 'regimpresion.index',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-book',
             // 'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'CONFIGURACION DE LA CUENTA'],
+        // ['header' => 'CONFIGURACION DE LA CUENTA'],
         
-        [
-            'text' => 'change_password',
-            'url'  => 'logout',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'logout',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
         
         
     ],

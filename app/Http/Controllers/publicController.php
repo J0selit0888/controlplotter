@@ -31,17 +31,17 @@ class publicController extends Controller
 
             $tamhojas = Tamhoja::all();
             $now = now();
-            $fecha = $now->format('d/m/Y');
-            return view('welcome', compact('buscarUsuario','tamhojas','fecha'));
+            $fecha = $now->format('H:m d/m/Y');
+            return view('buscar-usuario', compact('buscarUsuario','tamhojas','fecha'));
         } else {
-            echo ("ingrese nuevo usuarios");
+            return redirect()->route('index.welcome')->with('informar','Usted no está registrado, contáctese con el administrador.');
         }
     }
 
-    public function validarRegistro(Request $request){
-        $request->all();
-        return  redirect()->route('index.welcome');
-    }
+    // public function validarRegistro(Request $request){
+    //     $request->all();
+    //     return  redirect()->route('index.welcome');
+    // }
 
     public function registrarImpresion(Request $request, $id){
         Request()->validate([
@@ -55,7 +55,7 @@ class publicController extends Controller
         $crearRegistro = Regimpresion::create([
             'descripcion' => $request->descripcion,
             'cantidad' => $request->cantidad,
-            'fecha' => now()->format('Y/m/d'),
+            'fecha' => now(),
             'usuario_id' => $buscarUsuario->id,
             'tamhoja_id' => $request->hoja,
         ]);

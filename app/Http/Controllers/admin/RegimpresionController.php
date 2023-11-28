@@ -9,6 +9,7 @@ use App\Models\Regimpresion;
 use App\Models\Tamhoja;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use PDF;
 
 class RegimpresionController extends Controller
 {
@@ -18,6 +19,7 @@ class RegimpresionController extends Controller
      * @return \Illuminate\View\View
      */
     public function index(Request $request)
+       
     {
         $keyword = $request->get('search');
         $perPage = 25;
@@ -34,12 +36,40 @@ class RegimpresionController extends Controller
         }
 
         return view('admin.regimpresion.index', compact('regimpresion'));
+
+
+       
+
+        // dd($start_date);
+    
+      
+   
+       
     }
 
-    public function pdf()
+    public function pdf(Request $request)
     {
-       $regimpresion = Regimpresion::paginate();
-       return view('admin.regimpresion.pdf');
+    //    $regimpresion = Regimpresion::paginate();
+    $start_date = $request->input('start_date');
+    $end_date = $request->input('end_date');
+
+
+    $regimpresion = Regimpresion::query()
+    ->when($start_date, function ($query, $start_date) {
+        return $query->whereDate('fecha', '>=', $start_date);
+    })
+    ->when($end_date, function ($query, $end_date) {
+        return $query->whereDate('fecha', '<=', $end_date);
+    })
+    ->get();
+
+// return view('regimpresion.index', compact('regimpresion'));
+
+       $pdf = PDF::loadView('admin.regimpresion.pdf',['regimpresion'=>$regimpresion]);
+    //    $pdf->loadHTML('<h1>Test</h1>');
+       return $pdf->stream();
+
+    //    return view('admin.regimpresion.pdf', compact('regimpresion'));
     }
 
     /**
@@ -126,6 +156,7 @@ class RegimpresionController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
+    
     public function destroy($id)
     {
         Regimpresion::destroy($id);

@@ -34,7 +34,10 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/auth/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('auth.login');
     Route::get('/change-password', 'UserController@showChangePasswordForm')->name('change-password');
-    Route::get('/admin/regimpresions/pdf', [App\Http\Controllers\admin\RegimpresionController::class, 'pdf'])->name('regimpresion.pdf');
+    Route::get('/admin/regimpresion/pdf', [RegimpresionController::class, 'pdf'])->name('regimpresion.pdf');
+
+    
+    // Route::get('/admin/regimpresions/pdf', [App\Http\Controllers\admin\RegimpresionController::class, 'pdf'])->name('regimpresion.pdf');
 
     Route::resource('/admin/tamhoja', TamhojaController::class);
     Route::resource('/admin/unisolicitante', UnisolicitanteController::class);

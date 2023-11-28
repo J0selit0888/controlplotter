@@ -18,7 +18,7 @@ class CreateRegimpresionsTable extends Migration
             $table->timestamps();
             $table->string('descripcion')->nullable();
             $table->integer('cantidad')->nullable();
-            $table->date('fecha')->nullable();
+            $table->timestamp('fecha')->nullable();
             // $table->integer('usuario_id')->nullable();
             // $table->integer('tamhoja_id')->nullable();
 

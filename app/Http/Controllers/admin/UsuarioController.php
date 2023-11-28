@@ -52,7 +52,6 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        
         $requestData = $request->all();
         
         Usuario::create($requestData);

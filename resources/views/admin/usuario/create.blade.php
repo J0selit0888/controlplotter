@@ -10,7 +10,7 @@
                         <h4 class="text-center">AGREGAR NUEVO USUARIO</h4>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/usuario') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/usuario') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button></a>
                         <br />
                         <br />
 

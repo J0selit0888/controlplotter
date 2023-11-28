@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header"><h4 class="text-center">AGREGAR TAMAÑO DE HOJA</h4></div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/tamhoja') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/tamhoja') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button></a>
                         <br />
                         <br />
 
